@@ -4,137 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Celebration Choices</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: Arial; text-align:center; background:#fff5f8; margin:0; }
+.container { max-width:600px; margin:40px auto; }
+button { padding:10px 20px; border:none; border-radius:10px; cursor:pointer; margin-top:20px; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎉 Let us plan our celebration! 🎉</h1>
-        <h2>Pick your favorite food, cake, gift and what kind of date you want 😏💖</h2>
-        <p style="color:red; font-weight:bold;">NOTE: WE ARE NOT GOING FOR CHINESE FOOD CUZ WE GOING CHINA HEEHE 😂🇨🇳</p>
 
-        <!-- FOOD CHOICES -->
-        <h2>🍴 Food Choice</h2>
-        <form id="choicesForm">
-            <input type="radio" id="sushi" name="food" value="Sushi 🍣">
-            <label for="sushi">Sushi 🍣</label><br>
+<div class="container">
+    <h1>🎉 Let me plan for your birthday celebration! 🎉</h1>
+    <h2>Pick your favorite food, cake, gift and what kind of date you want 😏💖</h2>
+    <p style="color:red; font-weight:bold;">NOTE: WE ARE NOT GOING FOR CHINESE FOOD CUZ WE GOING CHINA HEEHE 😂🇨🇳</p>
 
-            <input type="radio" id="pizza" name="food" value="Pizza 🍕">
-            <label for="pizza">Pizza 🍕</label><br>
+    <!-- FOOD -->
+    <h2>🍴 Food Choice</h2>
+    <form id="choicesForm">
+        <input type="radio" id="sushi" name="food" value="Sushi 🍣"><label for="sushi"> Sushi 🍣</label><br>
+        <input type="radio" id="pizza" name="food" value="Pizza 🍕"><label for="pizza"> Pizza 🍕</label><br>
+        <input type="radio" id="burger" name="food" value="Burger 🍔"><label for="burger"> Burger 🍔</label><br>
+        <input type="radio" id="steak" name="food" value="Steak 🥩"><label for="steak"> Steak 🥩</label><br>
+        <input type="radio" id="pasta" name="food" value="Pasta 🍝"><label for="pasta"> Pasta 🍝</label><br>
+        <input type="radio" id="kbbq" name="food" value="Korean BBQ 🥓"><label for="kbbq"> Korean BBQ 🥓</label><br>
+    </form>
 
-            <input type="radio" id="burger" name="food" value="Burger 🍔">
-            <label for="burger">Burger 🍔</label><br>
+    <!-- CAKE -->
+    <h2>🍰 Cake Flavour</h2>
+    <form id="cakeForm">
+        <input type="radio" id="chocolate" name="cake" value="Chocolate 🍫"><label for="chocolate"> Chocolate 🍫</label><br>
+        <input type="radio" id="vanilla" name="cake" value="Vanilla 🍦"><label for="vanilla"> Vanilla 🍦</label><br>
+        <input type="radio" id="matcha" name="cake" value="Matcha 🍵"><label for="matcha"> Matcha 🍵</label><br>
+        <input type="radio" id="cheesecake" name="cake" value="Cheesecake 🧀🍰"><label for="cheesecake"> Cheesecake 🧀🍰</label><br>
+        <input type="radio" id="mango" name="cake" value="Mango 🥭"><label for="mango"> Mango 🥭</label><br>
+    </form>
 
-            <input type="radio" id="steak" name="food" value="Steak 🥩">
-            <label for="steak">Steak 🥩</label><br>
+    <!-- DATE -->
+    <h2>💖 Date Type</h2>
+    <form id="dateForm">
+        <input type="radio" id="hiking" name="date" value="Hiking ⛰️"><label for="hiking"> Hiking ⛰️</label><br>
+        <input type="radio" id="ocean" name="date" value="Oceanarium 🐠🌊"><label for="ocean"> Oceanarium 🐠🌊</label><br>
+        <input type="radio" id="picnic" name="date" value="Picnic 🌳🥪"><label for="picnic"> Picnic 🌳🥪</label><br>
+        <input type="radio" id="cycling" name="date" value="Cycling 🚲"><label for="cycling"> Cycling 🚲</label><br>
+        <input type="radio" id="home" name="date" value="Home Date 🏠😏"><label for="home"> Home Date 🏠😏</label><br>
+    </form>
 
-            <input type="radio" id="Pasta" name="food" value="Pasta 🍝">
-            <label for="salad">Pasta 🍝</label><br>
+    <!-- GIFT -->
+    <h2>🎁 Birthday Gifts</h2>
+    <form id="giftForm">
+        <input type="radio" id="gold" name="gift" value="1g Gold 🥇"><label for="gold"> 1g Gold (I'm a peasant) 🥇</label><br>
+        <input type="radio" id="me" name="gift" value="Me :] 😳"><label for="me"> Me :] 😳</label><br>
+        <input type="radio" id="flowers" name="gift" value="Flowers 🌸"><label for="flowers"> Flowers 🌸</label><br>
+        <input type="radio" id="watch" name="gift" value="Watch ⌚"><label for="watch"> Watch ⌚</label><br>
+        <input type="radio" id="games" name="gift" value="Games 🎮"><label for="games"> Games 🎮</label><br>
+        <input type="radio" id="perfume" name="gift" value="Perfume 🧴"><label for="perfume"> Perfume 🧴</label><br>
+    </form>
 
-            <input type="radio" id="kbbq" name="food" value="Korean BBQ 🥓">
-            <label for="kbbq">Korean BBQ 🥓</label><br>
-        </form>
+    <button id="sendBtn">Send My Choices 💌</button>
+</div>
 
-        <!-- CAKE FLAVOUR -->
-        <h2>🍰 Cake Flavour</h2>
-        <form id="cakeForm">
-            <input type="radio" id="chocolate" name="cake" value="Chocolate 🍫">
-            <label for="chocolate">Chocolate 🍫</label><br>
+<script>
+const sendBtn = document.getElementById("sendBtn");
 
-            <input type="radio" id="vanilla" name="cake" value="Vanilla fruit cake🍦">
-            <label for="vanilla">Vanilla fruit cake🍦</label><br>
+sendBtn.addEventListener("click", () => {
+    const food = document.querySelector('input[name="food"]:checked');
+    const cake = document.querySelector('input[name="cake"]:checked');
+    const date = document.querySelector('input[name="date"]:checked');
+    const gift = document.querySelector('input[name="gift"]:checked');
 
-            <input type="radio" id="matcha" name="cake" value="Matcha 🍵">
-            <label for="matcha">Matcha 🍵 o-o are you gay?</label><br>
+    if (!food || !cake || !date || !gift) {
+        alert("Please select everything 😋");
+        return;
+    }
 
-            <input type="radio" id="cheesecake" name="cake" value="Cheesecake 🧀🍰">
-            <label for="matcha">Cheesecake 🧀🍰</label><br>
+    const choices = `🎉 Your Birthday Celebration Choices 🎉
+        🍴 Food: ${food.value}
+        🍰 Cake: ${cake.value}
+        💖 Date: ${date.value}
+        🎁 Gift: ${gift.value}
+        Sent with love 💌`;
 
-            <input type="radio" id="Mango" name="cake" value="Mango 🥭">
-            <label for="matcha">Mango 🥭</label><br>
-        </form>
+    // Store choices for success page
+    localStorage.setItem("birthdayChoices", choices);
 
-        <!-- DATE TYPE CHOICES -->
-        <h2>💖 Date Type</h2>
-        <form id="dateForm">
-            <input type="radio" id="hiking" name="date" value="Hiking ⛰️">
-            <label for="hiking">Hiking ⛰️</label><br>
-
-            <input type="radio" id="underSea" name="date" value="Under the Sea 🐠🌊">
-            <label for="underSea">Under the Sea a.k.a Oceanarium 🐠🌊</label><br>
-
-            <input type="radio" id="picnic" name="date" value="Picnic 🌳🥪">
-            <label for="picnic">Picnic at Marina Barrage 🌳🥪</label><br>
-
-            <input type="radio" id="cycling" name="date" value="Cycling 🚲">
-            <label for="dinner">Cycling 🚲</label><br>
-
-            <input type="radio" id="Home date" name="date" value="Home date🏠😏">
-            <label for="dinner">Home date 🏠😏</label><br>
-        </form>
-
-        <!-- BIRTHDAY GIFT CHOICES -->
-        <h2>🎁 Birthday Gifts</h2>
-        <form id="giftForm">
-
-            <input type="radio" id="gold" name="gift" value="1g Gold (Please don't pick this HAHA) 🥇">
-            <label for="gold">1g Gold (I'm a peasant) 🥇</label><br>
-
-            <input type="radio" id="me" name="gift" value="Me :] (I hope you don't pick this too) 😳">
-            <label for="me">Me :] (I hope you don't pick this) 😳</label><br>
-
-            <input type="radio" id="flowers" name="gift" value="Flowers 🌸">
-            <label for="flowers">Flowers 🌸</label><br>
-
-            <input type="radio" id="watch" name="gift" value="Watch ⌚">
-            <label for="watch">Watch ⌚</label><br>
-
-            <input type="radio" id="games" name="gift" value="Games (Switch or Steam) 🎮">
-            <label for="games">Games (Switch or Steam) 🎮</label><br>
-
-            <input type="radio" id="perfume" name="gift" value="Perfume">
-            <label for="games">Perfume 🧴</label><br>
-
-        </form>
-
-        <br>
-        <button id="sendBtn">Send My Choices 💌</button>
-    </div>
-
-    <script>
-    const sendBtn = document.getElementById("sendBtn");
-
-    sendBtn.addEventListener("click", () => {
-
-        const food = document.querySelector('input[name="food"]:checked');
-        const cake = document.querySelector('input[name="cake"]:checked');
-        const date = document.querySelector('input[name="date"]:checked');
-        const gift = document.querySelector('input[name="gift"]:checked');
-
-        if (!food || !cake || !date || !gift) {
-            alert("Please select everything 😋");
-            return;
-        }
-
-        const choices =
-            `🎉 Your Birthday Celebration Choices 🎉
-
-            🍴 Food: ${food.value}
-            🍰 Cake: ${cake.value}
-            💖 Date: ${date.value}
-            🎁 Gift: ${gift.value}
-
-            Sent with love 💌`;
-
-        navigator.clipboard.writeText(choices).then(() => {
-            localStorage.setItem("birthdayChoices", choices);
-            alert("Yay! 🎉 Your choices are copied and send them to me via Telegram 😏💌");
-            window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html";
-
-        }).catch(() => {
-            alert("Oops! Something went wrong while copying. Please try again 😅");
-        });
+    // Copy to clipboard
+    navigator.clipboard.writeText(choices).then(() => {
+        alert("Yay! Choices copied 😏💌");
+        window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html";
+    }).catch(() => {
+        alert("Clipboard failed 😅 Please copy manually.");
     });
-    </script>
+});
+</script>
 
 </body>
 </html>
