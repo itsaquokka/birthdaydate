@@ -7,21 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- PASSWORD SCREEN -->
     <div class="container" id="passwordContainer">
-        <h1>Enter the secret code to enter the space🎁 Hint: An important date to both of us</h1>
+        <h1>Enter the secret code to enter 🎁 <br>Hint: An important date to both of us</h1>
         <input type="password" id="passwordInput" placeholder="Type here...">
         <button id="submitPassword">Submit</button>
-        <p id="errorMsg" class="hidden">Wrong code! 😡 How can you get it wrong? </p>
+        <p id="errorMsg" class="hidden">Wrong code! 😡 How can you get it wrong?</p>
     </div>
 
+    <!-- BIRTHDAY MESSAGE + YES/NO BUTTONS -->
     <div class="container hidden" id="messageContainer">
-        <h1>Happy advanced birthday, dear! 🎉 
-        Can I steal a little bit of your time on 14 March 2026 for a fun celebration… with yours truly? 😏💖 </h1>
+        <h1>Happy advanced birthday, dear! 🎉 <br>
+        Can I steal a little bit of your time on 14 March 2026 for a fun celebration… with yours truly? 😏💖</h1>
         <div class="button-container">
-        <button id="yesBtn">YES 💖</button>
-        <button id="noBtn"> NO 💢 </button>
+            <button id="yesBtn">YES 💖</button>
+            <button id="noBtn">NO 💢</button>
         </div>
     </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
 
     <script src="backend.js"></script>
 </body>
