@@ -40,3 +40,31 @@ button:hover {
     font-size: 24px;
     color: #ff4d6d;
 }
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+#yesBtn:hover {
+    transform: scale(1.4) rotate(-5deg);
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    position: absolute;
+}
