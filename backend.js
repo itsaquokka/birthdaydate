@@ -30,15 +30,21 @@ const container = document.querySelector('.button-container');
 noBtn.addEventListener('mouseenter', () => {
     noBtn.textContent = "HOW DARE U CHOOSE NO 😡";
 
-    // get container dimensions
     const rect = container.getBoundingClientRect();
-    const x = Math.random() * (rect.width - noBtn.offsetWidth);
-    const y = Math.random() * (rect.height - noBtn.offsetHeight);
+    const yesRect = yesBtn.getBoundingClientRect();
+
+    let x, y;
+    let attempts = 0;
+
+    do {
+        x = Math.random() * (rect.width - noBtn.offsetWidth);
+        y = Math.random() * (rect.height - noBtn.offsetHeight);
+        attempts++;
+        // Make sure No button does not overlap Yes button
+    } while (
+        x < yesRect.width + 20 && y < yesRect.height + 20 && attempts < 100
+    );
 
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
-});
-
-yesBtn.addEventListener('click', () => {
-    alert("Yay! 💖 Can’t wait for our celebration! 🎉");
 });
