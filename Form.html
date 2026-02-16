@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Celebration Choices</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Let’s plan our celebration! 🎉</h1>
+        <p>Pick your favorite food, cake, and what kind of date you want 😏💖</p>
+        <p style="color:red; font-weight:bold;">NOTE: WE ARE NOT GOING FOR CHINESE FOOD CUZ WE GOING CHINA HEEHE 😂🇨🇳</p>
+
+        <!-- FOOD CHOICES -->
+        <h2>🍴 Food Choice</h2>
+        <form id="choicesForm">
+            <input type="radio" id="sushi" name="food" value="Sushi 🍣">
+            <label for="sushi">Sushi 🍣</label><br>
+
+            <input type="radio" id="pizza" name="food" value="Pizza 🍕">
+            <label for="pizza">Pizza 🍕</label><br>
+
+            <input type="radio" id="burger" name="food" value="Burger 🍔">
+            <label for="burger">Burger 🍔</label><br>
+
+            <input type="radio" id="steak" name="food" value="Steak 🥩">
+            <label for="steak">Steak 🥩</label><br>
+
+            <input type="radio" id="Pasta" name="food" value="Pasta 🍝">
+            <label for="salad">Pasta 🍝</label><br>
+
+            <input type="radio" id="kbbq" name="food" value="Korean BBQ 🥓">
+            <label for="kbbq">Korean BBQ 🥓</label><br>
+        </form>
+
+        <!-- CAKE FLAVOUR -->
+        <h2>🍰 Cake Flavour</h2>
+        <form id="cakeForm">
+            <input type="radio" id="chocolate" name="cake" value="Chocolate 🍫">
+            <label for="chocolate">Chocolate 🍫</label><br>
+
+            <input type="radio" id="vanilla" name="cake" value="Vanilla fruit cake🍦">
+            <label for="vanilla">Vanilla fruit cake🍦</label><br>
+
+            <input type="radio" id="matcha" name="cake" value="Matcha 🍵">
+            <label for="matcha">Matcha 🍵 o-o are you gay?</label><br>
+
+            <input type="radio" id="cheesecake" name="cake" value="Cheesecake 🧀🍰">
+            <label for="matcha">Cheesecake 🧀🍰</label><br>
+
+            <input type="radio" id="Mango" name="cake" value="Mango 🥭">
+            <label for="matcha">Mango 🥭</label><br>
+        </form>
+
+        <!-- DATE TYPE CHOICES -->
+        <h2>💖 Date Type</h2>
+        <form id="dateForm">
+            <input type="radio" id="hiking" name="date" value="Hiking ⛰️">
+            <label for="hiking">Hiking ⛰️</label><br>
+
+            <input type="radio" id="underSea" name="date" value="Under the Sea 🐠🌊">
+            <label for="underSea">Under the Sea a.k.a Oceanarium 🐠🌊</label><br>
+
+            <input type="radio" id="picnic" name="date" value="Picnic 🌳🥪">
+            <label for="picnic">Picnic at Marina Barrage 🌳🥪</label><br>
+
+            <input type="radio" id="cycling" name="date" value="Cycling 🚲">
+            <label for="dinner">Cycling 🚲</label><br>
+
+            <input type="radio" id="Home date" name="date" value="Home date🏠😏">
+            <label for="dinner">Home date 🏠😏</label><br>
+        </form>
+
+        <br>
+        <button id="copyChoicesBtn">Send My Choices 💌</button>
+    </div>
+
+<script>
+const copyBtn = document.getElementById('copyChoicesBtn');
+
+copyBtn.addEventListener('click', () => {
+    const foodChoice = document.querySelector('input[name="food"]:checked');
+    const cakeChoice = document.querySelector('input[name="cake"]:checked');
+    const dateChoice = document.querySelector('input[name="date"]:checked');
+
+    if(!foodChoice || !cakeChoice || !dateChoice){
+        alert("Please select your food, cake, and date type 😋");
+        return;
+    }
+
+    const choices = `🎉 My Birthday Celebration Choices 🎉\n\n` +
+                    `🍴 Food: ${foodChoice.value}\n` +
+                    `🍰 Cake: ${cakeChoice.value}\n` +
+                    `💖 Date Type: ${dateChoice.value}\n\n` +
+                    "Sent with love 💌";
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(choices).then(() => {
+        alert("Yay! 🎉 Your choices are copied — now send them to me via Telegram 😏💌");
+    }).catch(err => {
+        alert("Oops! Something went wrong while copying. Please try manually 😅");
+    });
+});
+</script>
+</body>
+</html>

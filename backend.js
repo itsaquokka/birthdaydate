@@ -40,5 +40,5 @@ noBtn.addEventListener('click', () => {
 });
 
 yesBtn.addEventListener('click', () => {
-    alert("Yay! 💖 I knew you’d say YES! 🥳🎉\n\nHint: Our special place is under the sea 🐠🌊\n\nPsst… send me your favorite food for that day on Telegram, so I can plan the ultimate lunch/dinner adventure just for you 😏🍣🍕🍔💌");
+    alert("Yay! 💖 I knew you’d say YES! 💌");
 });
