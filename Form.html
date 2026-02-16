@@ -72,6 +72,27 @@
             <label for="dinner">Home date 🏠😏</label><br>
         </form>
 
+        <!-- BIRTHDAY GIFT CHOICES -->
+        <h2>🎁 Birthday Gifts</h2>
+        <form id="giftForm">
+
+            <input type="radio" id="gold" name="gift" value="1g Gold (I'm a peasant) 🥇">
+            <label for="gold">1g Gold (I'm a peasant) 🥇</label><br>
+
+            <input type="radio" id="me" name="gift" value="Me :] (I hope you don't pick this) 😳">
+            <label for="me">Me :] (I hope you don't pick this) 😳</label><br>
+
+            <input type="radio" id="flowers" name="gift" value="Flowers 🌸">
+            <label for="flowers">Flowers 🌸</label><br>
+
+            <input type="radio" id="watch" name="gift" value="Watch ⌚">
+            <label for="watch">Watch ⌚</label><br>
+
+            <input type="radio" id="games" name="gift" value="Games (Switch or Steam) 🎮">
+            <label for="games">Games (Switch or Steam) 🎮</label><br>
+
+        </form>
+
         <br>
         <button id="copyChoicesBtn">Send My Choices 💌</button>
     </div>
@@ -83,9 +104,10 @@ copyBtn.addEventListener('click', () => {
     const foodChoice = document.querySelector('input[name="food"]:checked');
     const cakeChoice = document.querySelector('input[name="cake"]:checked');
     const dateChoice = document.querySelector('input[name="date"]:checked');
+    const giftChoice = document.querySelector('input[name="gift"]:checked');
 
-    if(!foodChoice || !cakeChoice || !dateChoice){
-        alert("Please select your food, cake, and date type 😋");
+    if(!foodChoice || !cakeChoice || !dateChoice || !giftChoice){
+        alert("Please select your food, cake, date and gift 😋");
         return;
     }
 
@@ -93,13 +115,16 @@ copyBtn.addEventListener('click', () => {
                     `🍴 Food: ${foodChoice.value}\n` +
                     `🍰 Cake: ${cakeChoice.value}\n` +
                     `💖 Date Type: ${dateChoice.value}\n\n` +
+                    `🎁 Gift: ${giftChoice.value}\n\n` +
                     "Sent with love 💌";
 
     // Copy to clipboard
     navigator.clipboard.writeText(choices).then(() => {
         alert("Yay! 🎉 Your choices are copied — now send them to me via Telegram 😏💌");
+        window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html"
     }).catch(err => {
         alert("Oops! Something went wrong while copying. Please try manually 😅");
+        window.location.href = "https://itsaquokka.github.io/birthdaydate/failtocopy.html"
     });
 });
 </script>
