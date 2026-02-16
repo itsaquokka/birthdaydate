@@ -123,8 +123,8 @@
             Sent with love 💌`;
 
         navigator.clipboard.writeText(choices).then(() => {
-
             localStorage.setItem("birthdayChoices", choices);
+            alert("Yay! 🎉 Your choices are copied — now send them to me via Telegram 😏💌");
             window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html";
 
         }).catch(() => {
