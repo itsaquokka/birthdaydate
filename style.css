@@ -1,23 +1,20 @@
 /* CENTER THE CONTAINER PERFECTLY */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #ffafbd, #ffc3a0);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(255,255,255,0.95);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    max-width: 500px;
-    position: relative;
 }
 
 .hidden { display: none; }
