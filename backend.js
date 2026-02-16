@@ -5,7 +5,7 @@ const passwordInput = document.getElementById('passwordInput');
 const submitPassword = document.getElementById('submitPassword');
 const errorMsg = document.getElementById('errorMsg');
 
-const SECRET_CODE = "14032026"; // your date
+const SECRET_CODE = "14032026"; // example date
 
 submitPassword.addEventListener('click', () => {
     if(passwordInput.value === SECRET_CODE){
@@ -17,7 +17,6 @@ submitPassword.addEventListener('click', () => {
     }
 });
 
-// allow Enter key
 passwordInput.addEventListener('keypress', (e) => {
     if(e.key === "Enter") submitPassword.click();
 });
@@ -25,28 +24,21 @@ passwordInput.addEventListener('keypress', (e) => {
 // YES / NO BUTTONS
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
-const container = document.querySelector('.button-container');
 
-noBtn.addEventListener('mouseenter', () => {
-    noBtn.textContent = "HOW DARE U CHOOSE NO 😡";
+// Set initial scale
+let yesScale = 1;
+let noScale = 1;
 
-    const containerRect = container.getBoundingClientRect();
-    const yesRect = yesBtn.getBoundingClientRect();
+yesBtn.addEventListener('click', () => {
+    alert("Yay! 💖 Can’t wait for our celebration! 🎉");
+});
 
-    let x, y;
-    let safeDistance = 80; // minimum distance from Yes button
-    let attempts = 0;
+noBtn.addEventListener('click', () => {
+    // Shrink No button
+    noScale = noScale * 0.8; // shrink by 20%
+    noBtn.style.transform = `scale(${noScale})`;
 
-    do {
-        x = Math.random() * (containerRect.width - noBtn.offsetWidth);
-        y = Math.random() * (containerRect.height - noBtn.offsetHeight);
-        attempts++;
-        // calculate distance between centers
-        const dx = (x + noBtn.offsetWidth/2) - (yesBtn.offsetLeft + yesBtn.offsetWidth/2);
-        const dy = (y + noBtn.offsetHeight/2) - (yesBtn.offsetTop + yesBtn.offsetHeight/2);
-        var distance = Math.sqrt(dx*dx + dy*dy);
-    } while (distance < safeDistance && attempts < 100);
-
-        noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
+    // Grow Yes button
+    yesScale = yesScale * 1.2; // grow by 20%
+    yesBtn.style.transform = `scale(${yesScale})`;
 });

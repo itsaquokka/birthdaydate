@@ -15,46 +15,27 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     max-width: 500px;
-    position: relative; /* Important! */
+    position: relative;
 }
 
 .hidden { display: none; }
 
-.button-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    position: relative; /* Parent for absolute children */
-}
-
-#yesBtn {
-    position: relative; /* stays in normal flow */
-    background-color: #ff6f91;
-    color: white;
+button {
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 12px;
     border: none;
     cursor: pointer;
+    margin: 10px;
     transition: all 0.2s ease;
 }
 
-#yesBtn:hover {
-    transform: scale(1.4) rotate(-5deg);
-    background-color: #ff4d6d;
+#yesBtn {
+    background-color: #ff6f91;
+    color: white;
 }
 
 #noBtn {
-    position: absolute; /* will move around */
-    left: 150px; /* initial position */
-    top: 0;
     background-color: #ffcc00;
     color: black;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.1s ease;
 }
