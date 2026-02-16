@@ -41,4 +41,7 @@ noBtn.addEventListener('click', () => {
 
 yesBtn.addEventListener('click', () => {
     alert("Yay! 💖 I knew you’d say YES! 💌");
+
+    // Redirect to page2.html (or form.html) after OK
+    window.location.href = "https://itsaquokka.github.io/birthdaydate/Form.html"
 });
