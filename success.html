@@ -59,10 +59,28 @@ img {
     <img src="images.jpeg" alt="Us together" 
          style="width:300px; border-radius:20px; margin-top:20px;">
 
+    <h3>📋 Your selected choices (Copy again)</h3>
+    <textarea id="savedChoices" readonly></textarea>
+    <br>
+    <button onclick="copyAgain()">Copy Again 💌</button>
+
 </div>
 
-
 <script>
+// Load saved choices
+const saved = localStorage.getItem("birthdayChoices");
+if (saved) {
+    document.getElementById("savedChoices").value = saved;
+}
+
+function copyAgain() {
+    navigator.clipboard.writeText(
+        document.getElementById("savedChoices").value
+    ).then(() => {
+        alert("Copied again 💖");
+    });
+}
+
 // Generate floating hearts
 function createHeart() {
     const heart = document.createElement("div");

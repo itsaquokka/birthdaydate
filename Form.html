@@ -97,36 +97,42 @@
         <button id="copyChoicesBtn">Send My Choices 💌</button>
     </div>
 
-<script>
-const copyBtn = document.getElementById('copyChoicesBtn');
+    <script>
+    const sendBtn = document.getElementById("sendBtn");
 
-copyBtn.addEventListener('click', () => {
-    const foodChoice = document.querySelector('input[name="food"]:checked');
-    const cakeChoice = document.querySelector('input[name="cake"]:checked');
-    const dateChoice = document.querySelector('input[name="date"]:checked');
-    const giftChoice = document.querySelector('input[name="gift"]:checked');
+    sendBtn.addEventListener("click", () => {
 
-    if(!foodChoice || !cakeChoice || !dateChoice || !giftChoice){
-        alert("Please select your food, cake, date and gift 😋");
-        return;
-    }
+        const food = document.querySelector('input[name="food"]:checked');
+        const cake = document.querySelector('input[name="cake"]:checked');
+        const date = document.querySelector('input[name="date"]:checked');
+        const gift = document.querySelector('input[name="gift"]:checked');
 
-    const choices = `🎉 My Birthday Celebration Choices 🎉\n\n` +
-                    `🍴 Food: ${foodChoice.value}\n` +
-                    `🍰 Cake: ${cakeChoice.value}\n` +
-                    `💖 Date Type: ${dateChoice.value}\n\n` +
-                    `🎁 Gift: ${giftChoice.value}\n\n` +
-                    "Sent with love 💌";
+        if (!food || !cake || !date || !gift) {
+            alert("Please select everything 😋");
+            return;
+        }
 
-    // Copy to clipboard
-    navigator.clipboard.writeText(choices).then(() => {
-        alert("Yay! 🎉 Your choices are copied — now send them to me via Telegram 😏💌");
-        window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html"
-    }).catch(err => {
-        alert("Oops! Something went wrong while copying. Please try manually 😅");
-        window.location.href = "https://itsaquokka.github.io/birthdaydate/failtocopy.html"
+        const choices =
+            `🎉 Your Birthday Celebration Choices 🎉
+
+            🍴 Food: ${food.value}
+            🍰 Cake: ${cake.value}
+            💖 Date: ${date.value}
+            🎁 Gift: ${gift.value}
+
+            Sent with love 💌`;
+
+        navigator.clipboard.writeText(choices).then(() => {
+
+            localStorage.setItem("birthdayChoices", choices);
+            window.location.href = "https://itsaquokka.github.io/birthdaydate/success.html";
+
+        }).catch(() => {
+            alert("Oops! Something went wrong while copying. Please try again 😅");
+            window.location.href = "https://itsaquokka.github.io/birthdaydate/Form.html"
+        });
     });
-});
-</script>
+    </script>
+
 </body>
 </html>
