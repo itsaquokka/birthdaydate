@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Birthday Surprise!</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Birthday Surprise!</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- PASSWORD SCREEN -->
     <div class="container" id="passwordContainer">
-        <h1>Enter the secret code to enter 🎁 <br>Hint: An important date to both of us</h1>
+        <h1>Enter the secret code 🎁 <br>Hint: An important date to both of us</h1>
         <input type="password" id="passwordInput" placeholder="Type here...">
         <button id="submitPassword">Submit</button>
         <p id="errorMsg" class="hidden">Wrong! 😡 How can you get it wrong?</p>
     </div>
 
-    <!-- BIRTHDAY MESSAGE + YES/NO BUTTONS -->
+    <!-- BIRTHDAY MESSAGE -->
     <div class="container hidden" id="messageContainer">
-        <h1>Happy advanced birthday, dear! 🎉 <br>
-        Can I steal your time on 14 March 2026 for a fun celebration… with yours truly? 😏💖 Promise it will be a fun day out and fully sponsored by me</h1>
+        <h1>Happy advanced birthday, dear! 🎉<br>
+        Can I steal your time on 14 March 2026 for a fun celebration… with yours truly? 😏💖 
+        <br> I promise it will be fully sponsored and planned by me!</h1>
         <div class="button-container">
             <button id="yesBtn">YES 💖</button>
             <button id="noBtn">NO 💢</button>
         </div>
     </div>
 
-    <!-- Confetti canvas -->
+    <!-- Canvas for confetti/hearts -->
     <canvas id="confetti-canvas"></canvas>
 
     <script src="backend.js"></script>
