@@ -151,7 +151,7 @@ button { padding:10px 20px; border:none; border-radius:10px; cursor:pointer; mar
     `;
 
     // Store choices for success page
-    llocalStorage.setItem("birthdayChoices", summary);
+    localStorage.setItem("birthdayChoices", summary);
 
     // Copy to clipboard
     navigator.clipboard.writeText(summary).then(() => {
