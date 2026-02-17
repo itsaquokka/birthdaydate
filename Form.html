@@ -5,9 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Birthday Celebration Choices</title>
 <style>
-body { font-family: Arial; text-align:center; background: #ffe6f0; margin:0; }
-.container { max-width:600px; margin:40px auto; }
-button { padding:10px 20px; border:none; border-radius:10px; cursor:pointer; margin-top:20px; }
+body { 
+    font-family: Arial; 
+    text-align:center; 
+    background: #ffe6f0; 
+    margin:0; 
+}
+.container { 
+    max-width:600px; 
+    margin:40px auto; 
+}
+button {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ff4da6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
 </style>
 </head>
 <body>
@@ -77,11 +96,11 @@ sendBtn.addEventListener("click", () => {
     }
 
     const choices = `🎉 Your Birthday Celebration Choices 🎉
-        🍴 Food: ${food.value}
-        🍰 Cake: ${cake.value}
-        💖 Date: ${date.value}
-        🎁 Gift: ${gift.value}
-        Sent with love 💌`;
+    🍴 Food: ${food.value}
+    🍰 Cake: ${cake.value}
+    💖 Date: ${date.value}
+    🎁 Gift: ${gift.value}
+    Sent with love 💌`;
 
     // Store choices for success page
     localStorage.setItem("birthdayChoices", choices);
