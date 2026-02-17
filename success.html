@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>See You Soon ❤️</title>
 
 <style>
@@ -11,32 +11,80 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: #ffe6f0;
-    overflow: hidden;
+    overflow-x: hidden; /* prevent horizontal scroll only */
 }
 
 .container {
-    margin-top: 80px;
+    margin-top: 40px;
+    padding: 20px;
 }
 
+/* Responsive text */
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d63384;
+    line-height: 1.6;
+}
+
+/* Responsive image */
 img {
-    width: 300px;
+    width: 90%;
+    max-width: 350px;
     border-radius: 20px;
     margin-top: 20px;
+}
+
+/* Responsive textarea */
+#savedChoices {
+    width: 90%;
+    max-width: 600px;
+    height: 220px;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #d63384;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Button styling */
+button {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ff4da6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #e60073;
+    transform: scale(1.05);
 }
 
 /* Floating symbols */
 .floating {
     position: fixed;
-    bottom: -20px;
-    font-size: 24px;
+    bottom: -40px;
     pointer-events: none;
     animation: floatUp linear forwards;
 }
 
-/* Animation */
+/* Responsive animation height */
 @keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-800px); opacity: 0; }
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
 </style>
 </head>
@@ -48,7 +96,7 @@ img {
     <h2 style="margin-top:20px; font-size:20px; font-weight:bold; color:#d63384;">
         I will see you on 14 March. Lock it in your brain. 🧠 <br>
         Forget it… and I will be VERY SAD or VERY MAD. 😤❤️ <br>
-        Remember it… and you get kisses. 💋❤️
+        Remember it and you get kisses. 💋❤️
     </h2>
 
     <img src="images.jpeg" alt="Us together" 

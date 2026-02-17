@@ -21,14 +21,28 @@ body {
 
 .hidden { display: none; }
 
+select {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #d63384;
+}
+
 button {
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 12px;
     border: none;
+    background-color: #ff4da6;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
     margin: 10px;
     transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #e60073;
+    transform: scale(1.05);
 }
 
 #yesBtn {
@@ -40,3 +54,5 @@ button {
     background-color: #ffcc00;
     color: black;
 }
+
+
